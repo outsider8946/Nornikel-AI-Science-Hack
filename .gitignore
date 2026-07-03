@@ -2,3 +2,4 @@ logs/
 .vscode/
 test_data/
 src/__pycache__/
+src/utils/__pycache__/
