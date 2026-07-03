@@ -6,9 +6,12 @@ authors = [
     {name = "Maxim Abramov",email = "abramovmaxim.894@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.11,<3.14"
 dependencies = [
-    "neo4j (>=6.2.0,<7.0.0)"
+    "neo4j (>=6.2.0,<7.0.0)",
+    "docling (>=2.108.0,<3.0.0)",
+    "loguru (>=0.7.3,<0.8.0)",
+    "kg-gen (>=0.4.0,<0.5.0)",
 ]
 
 
