@@ -1,6 +1,6 @@
 import os
 import asyncio
-from typing import Any
+from typing import Any, Optional
 import openai
 from dotenv import load_dotenv
 
@@ -11,7 +11,6 @@ class LLMWokrer:
         self._embedding_semaphore = asyncio.Semaphore(embedding_batch)
         load_dotenv()
         self._folder_id = os.environ.get('FOLDER_ID')
-        print(self._folder_id)
         self._client = openai.AsyncOpenAI(
             api_key=os.environ.get('API_KEY'),
             project=self._folder_id,
@@ -22,7 +21,7 @@ class LLMWokrer:
             system_prompt: str, 
             user_prompt: str,
             model: str, 
-            max_tokens: int = 2000,
+            max_tokens: Optional[int] = None,
             temperature: float=0.0, 
             stream: bool= False,
             response_format: dict[str, Any] = None,

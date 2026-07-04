@@ -1,0 +1,2 @@
+CREATE CONSTRAINT unique_fact_id IF NOT EXISTS 
+FOR (f:Fact) REQUIRE f.id IS UNIQUE

@@ -1,0 +1,2 @@
+CREATE CONSTRAINT unique_claim_id IF NOT EXISTS 
+FOR (c:Claim) REQUIRE c.id IS UNIQUE

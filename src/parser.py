@@ -27,6 +27,9 @@ class Parser:
         dst_dir.mkdir(parents=True, exist_ok=True)
 
         for file_path in tqdm(src_dir.iterdir(), desc="Processing files"):
+            path2save = dst_dir / (file_path.stem + "_parsed.md")
+            if path2save.exists():
+                continue
             if file_path.suffix.lower() in {".pdf", ".docx"}:
                 raw = self.converter.convert(file_path).document.export_to_markdown()
                 result = self.postprocessing(raw)                
@@ -34,5 +37,5 @@ class Parser:
                 logger.warning(f"Unsupported file format: {file_path.suffix}")
                 continue
             
-            with open(dst_dir / (file_path.stem + "_parsed.md"), "w", encoding="utf-8") as f:
+            with open(path2save, "w", encoding="utf-8") as f:
                 f.write(result)

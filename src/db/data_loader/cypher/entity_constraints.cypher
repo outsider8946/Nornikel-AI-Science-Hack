@@ -1,0 +1,2 @@
+CREATE CONSTRAINT unique_entity_name IF NOT EXISTS 
+FOR (e:Entity) REQUIRE e.name IS UNIQUE

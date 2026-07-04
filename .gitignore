@@ -1,5 +1,9 @@
 logs/
 .vscode/
 test_data/
+src/db/__pycache__/
 src/__pycache__/
+src/db/data_loader/__pycache__/
+src/db/data_processor/__pycache__/
 src/utils/__pycache__/
+__pycache__/
