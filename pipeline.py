@@ -1,6 +1,6 @@
 from pathlib import Path
 import json
-from src.parser import Parser
+from db.data_processor.parser import Parser
 from typing import Any
 from src.utils.enums import Models
 from loguru import logger
